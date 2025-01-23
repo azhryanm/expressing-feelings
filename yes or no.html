@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menembak Perempuan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 flex items-center justify-center h-screen">
+    <div
+      class="bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm text-center text-white"
+    >
+      <h1 class="text-2xl font-bold text-white mb-4">
+        Apakah kamu mau jadi pacarku?
+      </h1>
+      <div class="space-y-4">
+        <button
+          id="yesButton"
+          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+        >
+          Iya
+        </button>
+        <button
+          id="noButton"
+          class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
+        >
+          Tidak
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Ambil elemen tombol
+      const yesButton = document.getElementById("yesButton");
+      const noButton = document.getElementById("noButton");
+
+      // Event listener untuk tombol "Iya"
+      yesButton.addEventListener("click", () => {
+        alert("Yay! Aku sangat senang kamu mau jadi pacarku! ❤️");
+      });
+
+      // Event listener untuk tombol "Tidak"
+      noButton.addEventListener("mouseover", () => {
+        // Pindahkan tombol ke lokasi acak
+        const x = Math.floor(Math.random() * (window.innerWidth - 100));
+        const y = Math.floor(Math.random() * (window.innerHeight - 50));
+
+        noButton.style.position = "absolute";
+        noButton.style.left = `${x}px`;
+        noButton.style.top = `${y}px`;
+      });
+    </script>
+  </body>
+</html>
